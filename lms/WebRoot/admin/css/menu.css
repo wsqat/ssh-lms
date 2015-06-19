@@ -1,0 +1,23 @@
+﻿div, ul, li { margin: 0; padding: 0; border: 0; }
+ul, li { list-style-type: none; text-transform: capitalize; }
+.nav { font-size: 12px; width: 100%; margin: 10px auto 0; border: #E6E6E6 solid 1px; border-bottom: #639ACA solid 1px; height: 42px; line-height: 42px; position: relative; z-index: 1; }
+    .nav a { text-decoration: none; }
+.navmain { height: 42px; padding: 0 5px; background: #FFF url(../images/nav-bg.png) repeat-x 0 top; position: relative; }
+#nav_all { height: 42px; float: left; line-height: 42px; position: relative; z-index: 222; }
+    #nav_all li { text-align: center; float: left; }
+        #nav_all li a { color: #639ACA; display: inline-block; font-size: 14px; font-weight: bold; cursor: pointer; padding: 0 11px 0 12px; _padding: 0 8px; height: 42px; line-height: 42px; white-space: nowrap; }
+            #nav_all li a:hover { background: url(../images/bird.png) center 33px no-repeat; height: 38px; line-height: 38px; border-top: 4px solid #639ACA; overflow: hidden; }
+        #nav_all li ul { display: none; position: absolute; z-index: 99; width: 980px; left: -6px; top: 43px; }
+    #nav_all ul li { background-image: none; line-height: 32px; height: 32px; padding-top: 0px; padding: 0; }
+        #nav_all ul li a { background-image: none; padding: 0px 10px; margin: 0px; height: 32px; line-height: 32px; color: #fff; font-weight: normal; background: #639ACA; border: none; }
+            #nav_all ul li a:hover { background-image: none; padding: 0px 10px; margin: 0px auto; height: 32px; line-height: 32px; color: #FFF; background: #639ACA; border-top: none; }
+
+#a
+{
+	margin:0 0 0 240px;
+	}
+	#head{
+	weith:100%;
+	height:30px;
+	margin-top:8px;
+		}

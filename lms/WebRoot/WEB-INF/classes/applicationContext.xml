@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/ssh"></property>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/lms/domain/User.hbm.xml</value>
+				<value>com/lms/domain/Szjlb.hbm.xml</value>
+				<value>com/lms/domain/Mdxxb.hbm.xml</value>
+				<value>com/lms/domain/Zdxxb.hbm.xml</value>
+				<value>com/lms/domain/Good.hbm.xml</value>
+				<value>com/lms/domain/Fkcb.hbm.xml</value>
+				<value>com/lms/domain/Lsbhb.hbm.xml</value>
+				<value>com/lms/domain/Lsshb.hbm.xml</value>
+				<value>com/lms/domain/Sjxxb.hbm.xml</value>
+				<value>com/lms/domain/Clxxb.hbm.xml</value>
+				<value>com/lms/domain/Zfdbhb.hbm.xml</value>
+				<value>com/lms/domain/Lssonghb.hbm.xml</value>
+				<value>com/lms/domain/Songhb.hbm.xml</value>
+				<value>com/lms/domain/Zlstjb.hbm.xml</value></list>
+		</property></bean>
+	<bean id="UserDAO" class="com.lms.dao.impl.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SzjlbDAO" class="com.lms.dao.impl.SzjlbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MdxxbDAO" class="com.lms.dao.impl.MdxxbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ZdxxbDAO" class="com.lms.dao.impl.ZdxxbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodDAO" class="com.lms.dao.impl.GoodDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FkcbDAO" class="com.lms.dao.impl.FkcbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LsbhbDAO" class="com.lms.dao.impl.LsbhbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LsshbDAO" class="com.lms.dao.impl.LsshbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SjxxbDAO" class="com.lms.dao.impl.SjxxbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ClxxbDAO" class="com.lms.dao.impl.ClxxbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ZfdbhbDAO" class="com.lms.dao.impl.ZfdbhbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LssonghbDAO" class="com.lms.dao.impl.LssonghbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SonghbDAO" class="com.lms.dao.impl.SonghbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ZlstjbDAO" class="com.lms.dao.impl.ZlstjbDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

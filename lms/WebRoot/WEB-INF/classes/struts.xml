@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <package name = "com.lms.action" extends = "struts-default"
+  		namespace="/">
+ 	 <action name = "login" class = "com.lms.action.LoginServiceAction">
+  		 <result name = "success"> /success.jsp </result>
+  		 <result name = "error"> /hello.jsp </result>
+  	</action>
+  	
+  	<action name="checkLogin" class="com.lms.action.LoginCheckAction"
+  					method="execute">
+			<result name="success">/admin/index.jsp</result>
+			<result name="error">/login.jsp</result>
+  	</action>
+  	
+  	<!-- <action name="listGood" class="com.lms.action.ListGoodAction">  
+            <result name="success">/list.jsp</result>  
+    </action>    -->
+    
+    <!-- 门店管理 -->
+    <!-- 查看门店信息 -->
+    <action name="lookMdxx" class="com.lms.action.LookMdxxAction">  
+            <result name="success">/lookMdxx.jsp</result>  
+    </action>
+    
+     <action name="updatePMdxx" 
+     	class="com.lms.action.LookMdxxAction"
+     	method="redirect">  
+            <result name="success">/updateMdxx.jsp</result>  
+     </action>  
+     
+     <action name="updateMdxx" 
+     	class="com.lms.action.LookMdxxAction"
+     	method="update">  
+            <result name="success" >/lookMdxx.jsp</result>  
+     </action>
+     
+     <!-- 提交报货表 -->
+     	<action name="UploadBhb" class="com.lms.action.BhbAction">
+     		<result name="success" >/admin/upload_bhb.jsp</result>
+     	</action>
+          
+     <!-- 创建报货表createBhb -->
+     	<action name="createBhb" class="com.lms.action.BhbAction" 
+     	method="create">
+     		<result name="success" >/admin/upload_bhb.jsp</result>
+     	</action>
+     	  <!-- 提交报货表 -->
+     	<action name="UploadPBhb" class="com.lms.action.BhbAction" 
+     	method="upload">
+     		<result name="success" >/admin/upload_bhb_suc.jsp</result>
+     		<result name="error" >/admin/upload_bhb_suc.jsp</result>
+     	</action>
+     	
+     	
+     <!-- 浏览历史报货表lookLsbhb -->
+     <action name="lookLsbhb" class="com.lms.action.LsbhbAction">
+     		<result name="success" >/admin/lookLsbhb.jsp</result>
+     		<result name="error" >/admin/lookLsbhb_error.jsp</result>
+     	</action>
+     	
+     <!-- 浏览历史收货表 -->
+     <action name="lookLsshb" class="com.lms.action.LsshbAction">
+     		<result name="success" >/admin/lookLsshb.jsp</result>
+     		<result name="error" >/admin/lookLsshb_error.jsp</result>
+     	</action>
+     
+     
+     <!-- 查看个人信息lookUser -->
+     	<action name="lookUser" class="com.lms.action.UserAction">
+     		<result name="success" >/admin/lookUser.jsp</result>
+     	</action>
+     <!-- 修改个人密码updateUserPwd -->
+     	<action name="updateUserPwd" class="com.lms.action.UserAction" 
+     		method="redirect">
+     		<result name="success" >/admin/updateUser.jsp</result>
+     	</action>
+     	
+     	<action name="updateUser" class="com.lms.action.UserAction" 
+     		method="update">
+     		<result name="success" >/admin/lookUser.jsp</result>
+     	</action>
+     	
+     <!-- 查看商品库存 -->
+     <action name="lookKC" class="com.lms.action.KCXXAction" >
+     		<result name="success" >/admin/lookKC.jsp</result>
+     	</action>
+     
+     
+     <!-- 提交收货表 -->
+     <action name="UploadShb" class="com.lms.action.UploadShbAction" >
+     		<result name="success" >/admin/upload_shb.jsp</result>
+     	</action>
+     <!-- 提交createShb -->	
+     <action name="createShb" class="com.lms.action.UploadShbAction" 
+     		method="create">
+     		<result name="success" >/admin/upload_shb_suc.jsp</result>
+     		<!-- <result name="success" >/admin/upload_shb.jsp</result> -->
+     	</action>
+     
+     <!-- 注销 -->
+     <action name="logout" 
+     	class="com.lms.action.LoginCheckAction"
+     	method="logout">  
+            <result name="success">/logout.jsp</result>  
+     </action>
+     
+     
+     
+     <!-- 送货表 uploadSonghb-->
+     <action name="uploadSonghb" 
+     	class="com.lms.action.uploadSonghuAction">  
+            <result name="success">/admin/upload_songhb.jsp</result>  
+     </action>
+     
+     
+     
+     <!-- 查看司机信息 -->
+     <action name="lookSJ" 
+     	class="com.lms.action.SJXXAction">  
+            <result name="success">/admin/lookSjxx.jsp</result>  
+     </action>
+    
+     <!-- 修改司机信息  updatePSJxx.action -->
+     <action name="updatePSJxx" 
+     	class="com.lms.action.SJXXAction" method="updatePSJxx">  
+            <result name="success">/admin/updatePSjxx.jsp</result>  
+     </action>
+     <!-- 修改单条司机信息 -->
+     <action name="updateSJxx" 
+     	class="com.lms.action.SJXXAction" method="updateSJxx">  
+            <result name="success">/admin/updateSjxx.jsp</result>  
+     </action>
+     <!-- 提交修改信息updateOSJxx -->
+     <action name="updateOSJxx" 
+     	class="com.lms.action.SJXXAction" method="updateOSJxx">  
+            <result name="success">/admin/lookSjxx.jsp</result>  
+     </action>
+    
+    <!-- 删除 司机信息deleteSJxx -->
+    <action name="deleteSJxx" 
+     	class="com.lms.action.SJXXAction" method="deleteSJxx">  
+            <result name="success">/admin/lookSjxx.jsp</result>  
+     </action>
+     
+    <!-- 增加司机信息 -->
+   	<action name="addSJ" 
+     	class="com.lms.action.SJXXAction" method="redirectAdd">  
+            <result name="success">/admin/addSjxx.jsp</result>  
+     </action>
+     
+     <action name="addSJxx" 
+     	class="com.lms.action.SJXXAction" method="addSjxx">  
+            <result name="success">/admin/lookSjxx.jsp</result>  
+     </action>
+    
+    
+     <!-- 查看车辆信息 -->
+    
+     <!-- 修改车辆信息 -->
+    
+    
+    <!-- 查看车辆信息 -->
+     <action name="lookCL" 
+     	class="com.lms.action.CLXXAction">  
+            <result name="success">/admin/lookClxx.jsp</result>  
+     </action>
+    
+     <!-- 修改车辆信息  updatePCLxx.action -->
+     <action name="updatePCLxx" 
+     	class="com.lms.action.CLXXAction" method="updatePCLxx">  
+            <result name="success">/admin/updatePClxx.jsp</result>  
+     </action>
+     <!-- 修改单条车辆信息 -->
+     <action name="updateCLxx" 
+     	class="com.lms.action.CLXXAction" method="updateCLxx">  
+            <result name="success">/admin/updateClxx.jsp</result>  
+     </action>
+     <!-- 提交修改信息updateOCLxx -->
+     <action name="updateOCLxx" 
+     	class="com.lms.action.CLXXAction" method="updateOCLxx">  
+            <result name="success">/admin/lookClxx.jsp</result>  
+     </action>
+    
+    <!-- 删除 车辆信息deleteCLxx -->
+    <action name="deleteCLxx" 
+     	class="com.lms.action.CLXXAction" method="deleteCLxx">  
+            <result name="success">/admin/lookClxx.jsp</result>  
+     </action>
+     
+    <!-- 增加车辆信息 -->
+   	<action name="addCL" 
+     	class="com.lms.action.CLXXAction" method="redirectAdd">  
+            <result name="success">/admin/addClxx.jsp</result>  
+     </action>
+     
+     <action name="addCLxx" 
+     	class="com.lms.action.CLXXAction" method="addSjxx">  
+            <result name="success">/admin/lookClxx.jsp</result>  
+     </action>
+    
+    
+    
+  </package>
+</struts>    

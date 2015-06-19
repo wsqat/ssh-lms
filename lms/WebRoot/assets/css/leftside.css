@@ -1,0 +1,37 @@
+.menu ul{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	height: 70px;
+	width: 100px;
+	line-height: 70px;
+}
+.menu ul li{
+	list-style-type: none;
+	height: 4em;
+	text-align: center;
+	overflow:visible;
+	background-color: #E2E6E8;
+	border:groove;
+}
+
+.menu ul li a {
+	font-family: "微软雅黑";
+	color: #4A4242;
+	font-size: 1.4em;
+	text-decoration: none;
+}
+/*第零个格子*/
+.menu li.choice0  {
+	}
+/*第二个格子*/
+.menu li.choice1  {}
+/*第三个格子*/
+.menu li.choice2 {}
+/*第四个格子*/
+.menu li.choice3  {}
+/*第五个格子*/
+.menu li.choice4  {}
+/*第六个格子*/
+.menu li.choice5  {}
+.menu li.choice6  {}
